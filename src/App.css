@@ -1,0 +1,76 @@
+:root {
+  background-color: #000000;
+  color: white;
+}
+
+main {
+  margin-top: 6rem;
+}
+
+.map {
+  display: flex;
+  gap: 4rem;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.row:nth-child(even) {
+  translate: 10rem;
+}
+
+.tile {
+  position: relative;
+  background-color: rgb(144, 220, 232);
+  width: 20rem;
+  height: 12rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block-start: 1rem;
+  border-color: rgb(144, 220, 232);
+  transition: all 0.2s ease;
+}
+
+.tile::before {
+  content: "";
+  position: absolute;
+  width: 0px;
+  background-color: transparent;
+  height: 0px;
+  border-bottom: 4rem solid rgb(144, 220, 232);
+  border-right: 10rem solid transparent;
+  border-left: 10rem solid transparent;
+  top: -4rem;
+}
+.tile::after {
+  content: "";
+  position: absolute;
+  width: 0px;
+  background-color: transparent;
+  height: 0px;
+  border-top: 4rem solid rgb(144, 220, 232);
+  border-right: 10rem solid transparent;
+  border-left: 10rem solid transparent;
+  bottom: -4rem;
+}
+
+.tile:hover {
+  scale: 1.2;
+}
+
+.thumbnail {
+  overflow: hidden;
+  width: 80%;
+  border: 1px solid gray;
+  border-radius: 1rem;
+}
+
+.thumbnail > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
